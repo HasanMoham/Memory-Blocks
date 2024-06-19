@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <div class="control-buttons">
+      <input type="text" id="player-name" placeholder="Enter your name">
+      <select id="level-select">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button id="start-game-btn">Start Game</button>
+    </div>
+    <div class="info-container">
+      <div class="name">
+        Hello: <span></span>
+        <div class="timer">
+          Timer: <span id="timer">00:00</span>
+        </div>
+      </div>
+      <div class="tries">
+        Wrong Tries: <span>0</span>
+        <div class="level">
+          Level: <span id="selected-level">Easy</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="memory-game-blocks">
+      <div class="game-block" data-technology="lovelyimog">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant10.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="lovelyimog">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant10.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="pinkhart">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant9.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="pinkhart">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant9.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="whitehart">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant8.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="whitehart">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant8.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="cool">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant7.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="cool">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant7.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="wink">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant6.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="wink">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant6.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="creepy">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant5.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="creepy">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant5.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="shhhh">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant4.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="shhhh">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant4.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="eye">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant3.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="eye">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant3.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="smile">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant2.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="smile">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant2.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="butterfly">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant1.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-technology="butterfly">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="../photo/plant1.png" alt="">
+        </div>
+      </div>
+    </div>
+    <audio id="success" src="audio/success.mp4" preload="auto"></audio>
+    <audio id="fail" src="audio/fail.mp4" preload="auto"></audio>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

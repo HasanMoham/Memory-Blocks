@@ -1,0 +1,134 @@
+/* main.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d5dc5;
+  transition: background-color 0.3s;
+}
+
+.container {
+  text-align: center;
+  padding: 10px;
+}
+
+.logo {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding-top: 30px;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(76, 73, 73);
+}
+
+.box .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.box:hover img {
+  filter: blur(2px);
+}
+
+.box:hover .overlay {
+  opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .row {
+    gap: 40px;
+  }
+
+  .box {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    gap: 10px;
+  }
+
+  .box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo img {
+    max-width: 80px;
+  }
+}

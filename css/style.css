@@ -1,0 +1,215 @@
+/* main.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+}
+
+.control-buttons {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(3, 169, 244, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-buttons #player-name,
+.control-buttons #level-select,
+.control-buttons #start-game-btn {
+  margin-bottom: 10px;
+  width: calc(50% - 40px); /* Adjusted width to account for padding and margin */
+  padding: 10px; /* Reduced padding */
+  font-size: 18px; /* Reduced font size */
+  text-align: center; /* Center text horizontally */
+  border: 2px solid #2196f3; /* Border style */
+  border-radius: 4px; /* Slightly rounded corners */
+  background-color: #FFFFFF; /* Background color */
+  box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Reduced shadow */
+}
+
+.control-buttons #player-name::placeholder,
+.control-buttons #level-select,
+.control-buttons #start-game-btn {
+  color: #888; /* Placeholder color for input */
+}
+
+.control-buttons #player-name:focus,
+.control-buttons #level-select:focus,
+.control-buttons #start-game-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.control-buttons #start-game-btn {
+  background-color: #F44336;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.control-buttons #level-select {
+  height: 50px; /* Reduced height for select box */
+}
+
+.info-container {
+  width: 1080px;
+  margin: 20px auto 0;
+  background-color: #F6F6F6;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  border: 2px solid #2196f3;
+}
+
+.info-container .name, .info-container .tries {
+  width: 50%;
+  float: left;
+}
+
+.info-container .name .timer, .info-container .tries .level {
+  margin-top: 10px;
+}
+
+.memory-game-blocks {
+  display: flex;
+  width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.memory-game-blocks.no-clicking {
+  pointer-events: none;
+}
+
+.memory-game-blocks .game-block {
+  height: 200px;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 200px;
+  margin: 0 10px 20px;
+}
+
+.memory-game-blocks .game-block .front {
+  background-color: #333;
+  line-height: 200px;
+}
+
+.memory-game-blocks .game-block .front:before {
+  /* content: '★';  */
+  content: '?'; 
+  color: #FFF;
+  font-size: 140px;
+  font-weight: bold;
+}
+
+.memory-game-blocks .game-block .back {
+  background-color: #607D8B;
+  transform: rotateY(180deg);
+}
+
+.memory-game-blocks .game-block .back img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-top: 30px;
+}
+
+.memory-game-blocks .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 5px solid #2196F3;
+}
+
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .info-container {
+    width: 90%;
+    font-size: 22px;
+  }
+
+  .memory-game-blocks {
+    width: 90%;
+  }
+
+  .memory-game-blocks .game-block {
+    flex: 1 0 180px;
+    height: 180px;
+  }
+
+  .control-buttons #player-name,
+  .control-buttons #level-select,
+  .control-buttons #start-game-btn {
+    width: 70%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-container {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .memory-game-blocks .game-block {
+    flex: 1 0 150px;
+    height: 150px;
+  }
+
+  .control-buttons #player-name,
+  .control-buttons #level-select,
+  .control-buttons #start-game-btn {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .control-buttons #level-select {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-container {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .info-container .name, .info-container .tries {
+    width: 100%;
+    float: none;
+  }
+
+  .memory-game-blocks .game-block {
+    flex: 1 0 120px;
+    height: 120px;
+  }
+
+  .control-buttons #player-name,
+  .control-buttons #level-select,
+  .control-buttons #start-game-btn {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .control-buttons #level-select {
+    height: 35px;
+  }
+}
